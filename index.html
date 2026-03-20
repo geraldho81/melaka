@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melaka — 3 Days of Heritage & Wonder</title>
+<title>Melaka: 3 Days of Heritage & Wonder</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
@@ -878,6 +879,106 @@
     margin: 0;
   }
 
+  /* ===== OTHER PLACES TABLE ===== */
+  #more { background: var(--ivory-dark); }
+  .places-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-top: 1.5rem;
+  }
+  .places-table thead th {
+    padding: 0.9rem 1.25rem;
+    text-align: left;
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    background: var(--crimson-dark);
+    white-space: nowrap;
+  }
+  .places-table tbody tr {
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: background 0.2s;
+  }
+  .places-table tbody tr:hover { background: rgba(201,168,76,0.07); }
+  .places-table td {
+    padding: 1rem 1.25rem;
+    vertical-align: top;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .place-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--crimson-dark);
+    display: block;
+  }
+  .place-cat {
+    display: inline-block;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    margin-top: 0.3rem;
+  }
+  .cat-cafe { background: rgba(74,46,18,0.12); color: #7A5230; border: 1px solid rgba(74,46,18,0.18); }
+  .cat-food { background: rgba(196,98,45,0.12); color: var(--terracotta); }
+  .cat-art { background: rgba(122,139,111,0.15); color: var(--sage); }
+  .cat-views { background: rgba(139,26,26,0.1); color: var(--crimson); }
+  .cat-seafood { background: rgba(201,168,76,0.15); color: var(--warm-brown); }
+  .cat-bar { background: rgba(44,26,14,0.1); color: var(--warm-brown); border: 1px solid rgba(44,26,14,0.15); }
+
+  /* ===== PACKING SECTION ===== */
+  #packing { background: var(--ivory); }
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .pack-category {
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 1.75rem;
+    background: var(--ivory);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .pack-category:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-3px); }
+  .pack-category-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .pack-list { list-style: none; padding: 0; margin: 0; }
+  .pack-list li {
+    font-size: 0.82rem;
+    color: rgba(44,26,14,0.72);
+    padding: 0.35rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    line-height: 1.5;
+  }
+  .pack-list li:last-child { border-bottom: none; }
+  .pack-list li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.45rem;
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -901,6 +1002,7 @@
     <li><a href="#day1">Day One</a></li>
     <li><a href="#day2">Day Two</a></li>
     <li><a href="#day3">Day Three</a></li>
+    <li><a href="#more">More Places</a></li>
     <li><a href="#practical">Plan Ahead</a></li>
   </ul>
 </nav>
@@ -952,7 +1054,7 @@
       <em>Melaka</em>
       <span class="line2">3 Days · 2 Nights</span>
     </h1>
-    <p class="hero-dates">2 April — 4 April 2026</p>
+    <p class="hero-dates">2 April to 4 April 2026</p>
     <a href="#day1" class="hero-cta">
       <span>Explore the Journey</span>
       <span class="arrow">→</span>
@@ -995,9 +1097,9 @@
 
 <!-- Day Tabs -->
 <div class="day-tabs" id="dayTabs">
-  <button class="day-tab active" data-day="day1">Day One — Cafes &amp; Heritage</button>
-  <button class="day-tab" data-day="day2">Day Two — Street Food Trail</button>
-  <button class="day-tab" data-day="day3">Day Three — Coffee &amp; Farewell</button>
+  <button class="day-tab active" data-day="day1">Day One: Cafes &amp; Heritage</button>
+  <button class="day-tab" data-day="day2">Day Two: Street Food Trail</button>
+  <button class="day-tab" data-day="day3">Day Three: Coffee &amp; Farewell</button>
 </div>
 
 <!-- ===== DAY 1 ===== -->
@@ -1008,7 +1110,7 @@
         <div class="day-number">01</div>
         <div class="day-date">Thursday · 2 April 2026</div>
         <h2 class="day-heading">First Coffee,<br><em>Heritage & Hawkers</em></h2>
-        <p class="day-desc">Ease into Melaka the right way — a third-wave espresso in a restored Peranakan shophouse, then a slow drift through Dutch squares and colonial ruins, with chicken rice balls and satay celup waiting at the end.</p>
+        <p class="day-desc">Ease into Melaka the right way: a third-wave espresso in a restored Peranakan shophouse, then a slow drift through Dutch squares and colonial ruins, with chicken rice balls and satay celup waiting at the end.</p>
       </div>
       <div class="day-visual">
         <img class="day-visual-photo" src="https://melaka-tourism.com/media/com_jbusinessdirectory/pictures/companies/127/The_Daily_Fix_00002.jpg" alt="Daily Fix Cafe Melaka" loading="lazy" onerror="this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZxfL5Cf94-AYKlNEWHsmvwxkCn9sqqJCSlK1RaoaBLOnUDCd6KLVqEl5mCNvoUKsrhyjji7e8jGqGx2Qo55YHKaBA4Hp9KrTdsN9kSN2kY39gGSUJ3nFXk5gHZDYh9tnqWAgJ6PF1pAI/s1600/DSC00166.JPG'">
@@ -1029,14 +1131,14 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">Arrival</div>
           <div class="timeline-title">Into Melaka</div>
-          <div class="timeline-desc">Arrive from KL (~2 hours by bus or car). Check in at the heritage zone — the Majestic Malacca or Casa del Rio sit perfectly within walking distance of everything.</div>
+          <div class="timeline-desc">Arrive from KL (~2 hours by bus or car). Check in at the heritage zone. The Majestic Malacca or Casa del Rio sit perfectly within walking distance of everything.</div>
           <span class="timeline-tag tag-activity">Check-in</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">9:00 am</div>
           <div class="timeline-title">Daily Fix Cafe ☕</div>
-          <div class="timeline-desc">Melaka's most beloved heritage cafe on Jalan Hang Jebat. A beautifully restored Peranakan shophouse serving specialty espresso, eggs Benedict on Nyonya toast, and housemade kaya jam. Expect a queue — worth every minute.</div>
+          <div class="timeline-desc">Melaka's most beloved heritage cafe on Jalan Hang Jebat. A beautifully restored Peranakan shophouse serving specialty espresso, eggs Benedict on Nyonya toast, and housemade kaya jam. Expect a queue; worth every minute.</div>
           <span class="timeline-tag tag-cafe">Cafe</span>
           <div class="timeline-photo">
             <img src="https://melaka-tourism.com/media/com_jbusinessdirectory/pictures/companies/127/The_Daily_Fix_00001.jpg" alt="Daily Fix Cafe" loading="lazy" onerror="this.src='https://i2.wp.com/foodeverywhere.net/wp-content/uploads/2017/04/34127601802_b06b4c985f_z.jpg'">
@@ -1047,7 +1149,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">10:30 am</div>
           <div class="timeline-title">Jonker Street Morning Walk</div>
-          <div class="timeline-desc">Before the afternoon crowds, Jonker Street belongs to locals. Pick up fresh Nyonya kueh — butterfly blue rice cakes, ondeh-ondeh and kueh talam — from the morning kueh ladies.</div>
+          <div class="timeline-desc">Before the afternoon crowds, Jonker Street belongs to locals. Pick up fresh Nyonya kueh: butterfly blue rice cakes, ondeh-ondeh and kueh talam, from the morning kueh ladies.</div>
           <span class="timeline-tag tag-street">Street Food</span>
         </div>
       </div>
@@ -1064,7 +1166,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">12:00 pm</div>
-          <div class="timeline-title">Chung Wah — Chicken Rice Balls 🍚</div>
+          <div class="timeline-title">Chung Wah: Chicken Rice Balls 🍚</div>
           <div class="timeline-desc">Melaka's most iconic dish: fragrant Hainanese chicken rice hand-rolled into golf-ball sized orbs. Chung Wah on Jalan Hang Jebat has been serving these since the 1960s. Queue before noon or wait 45 minutes.</div>
           <span class="timeline-tag tag-street">Must-Eat</span>
           <div class="timeline-photo">
@@ -1083,7 +1185,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">3:00 pm</div>
           <div class="timeline-title">Calanthe Art Cafe ☕</div>
-          <div class="timeline-desc">A gorgeous cafe concept built around all 13 Malaysian states — each with its own signature coffee blend. Order the Melaka kopi with gula melaka syrup and sit in the cool vintage interior of this 1920s shophouse on Jalan Hang Kasturi.</div>
+          <div class="timeline-desc">A gorgeous cafe concept built around all 13 Malaysian states, each with its own signature coffee blend. Order the Melaka kopi with gula melaka syrup and sit in the cool vintage interior of this 1920s shophouse on Jalan Hang Kasturi.</div>
           <span class="timeline-tag tag-cafe">Cafe</span>
           <div class="timeline-photo">
             <img src="https://i1.wp.com/foodeverywhere.net/wp-content/uploads/2017/04/33901071270_b53185499c_z.jpg" alt="Calanthe Art Cafe 13 states coffee" loading="lazy" onerror="this.src='https://i2.wp.com/foodeverywhere.net/wp-content/uploads/2017/04/34127601802_b06b4c985f_z.jpg'">
@@ -1094,7 +1196,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">4:00 pm</div>
           <div class="timeline-title">Christ Church, Stadthuys & Dutch Square</div>
-          <div class="timeline-desc">The iconic blood-red Dutch colonial square — Christ Church (1753), the Stadthuys administrative building, and the Dutch fountain. Golden hour light here is extraordinary for photography.</div>
+          <div class="timeline-desc">The iconic blood-red Dutch colonial square: Christ Church (1753), the Stadthuys administrative building, and the Dutch fountain. Golden hour light here is extraordinary for photography.</div>
           <span class="timeline-tag tag-landmark">Landmark</span>
         </div>
         <div class="timeline-item">
@@ -1119,13 +1221,13 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">6:30 pm</div>
           <div class="timeline-title">Sunset River Cruise</div>
-          <div class="timeline-desc">A 30-minute glide along the Melaka River past painted heritage murals and old godowns. Boats depart from Quayside — book at the jetty, no reservation needed.</div>
+          <div class="timeline-desc">A 30-minute glide along the Melaka River past painted heritage murals and old godowns. Boats depart from Quayside. Book at the jetty; no reservation needed.</div>
           <span class="timeline-tag tag-activity">Activity</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">8:00 pm</div>
-          <div class="timeline-title">Capitol Satay — Satay Celup 🍢</div>
+          <div class="timeline-title">Capitol Satay: Satay Celup 🍢</div>
           <div class="timeline-desc">Melaka's obsession: skewers of tofu, prawns, fishcake and offal dunked into a communal bubbling peanut satay broth. Capitol Satay at 41 Lorong Bukit Cina is the original. Order extra lontong rice cakes.</div>
           <span class="timeline-tag tag-food">Dinner</span>
           <div class="timeline-photo">
@@ -1136,7 +1238,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">9:30 pm</div>
-          <div class="timeline-title">Jonker Night Market — Street Food Crawl 🌃</div>
+          <div class="timeline-title">Jonker Night Market: Street Food Crawl 🌃</div>
           <div class="timeline-desc">Friday night and the market is in full swing. Hit Jonker 88 for the city's most famous Cendol (coconut milk, palm sugar, green pandan jelly), grab grilled Otak-Otak fish cakes from the roadside, and finish with a crispy Apam Balik peanut turnover pancake.</div>
           <span class="timeline-tag tag-street">Street Food</span>
           <div class="timeline-photo">
@@ -1192,15 +1294,15 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">9:30 am</div>
-          <div class="timeline-title">Temple Street — Three Faiths, One Walk</div>
-          <div class="timeline-desc">Walk Harmony Street (Jalan Tukang Emas): Cheng Hoon Teng Chinese temple (1646, Malaysia's oldest), Sri Poyyatha Vinayagar Hindu temple (oldest in Malaysia), and Kampung Kling Mosque with its extraordinary Sumatran-Victorian minaret — all within 100 metres of each other.</div>
+          <div class="timeline-title">Temple Street: Three Faiths, One Walk</div>
+          <div class="timeline-desc">Walk Harmony Street (Jalan Tukang Emas): Cheng Hoon Teng Chinese temple (1646, Malaysia's oldest), Sri Poyyatha Vinayagar Hindu temple (oldest in Malaysia), and Kampung Kling Mosque with its extraordinary Sumatran-Victorian minaret, all within 100 metres of each other.</div>
           <span class="timeline-tag tag-culture">Culture</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">11:00 am</div>
-          <div class="timeline-title">Popiah & Tau Fu Fa — Morning Snacks 🥟</div>
-          <div class="timeline-desc">Stop at the Popiah stall on Jalan Hang Jebat for fresh spring rolls stuffed with braised jicama, egg and prawns — assembled right in front of you. Then hunt down a Tau Fu Fa (silken tofu dessert) uncle for a warm bowl with gula melaka syrup.</div>
+          <div class="timeline-title">Popiah & Tau Fu Fa: Morning Snacks 🥟</div>
+          <div class="timeline-desc">Stop at the Popiah stall on Jalan Hang Jebat for fresh spring rolls stuffed with braised jicama, egg and prawns, assembled right in front of you. Then hunt down a Tau Fu Fa (silken tofu dessert) uncle for a warm bowl with gula melaka syrup.</div>
           <span class="timeline-tag tag-street">Street Snacks</span>
         </div>
       </div>
@@ -1217,30 +1319,30 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">12:30 pm</div>
-          <div class="timeline-title">Low Yong Mow — Legendary Dim Sum 🥢</div>
-          <div class="timeline-desc">Since 1948. This legendary kopitiam on Jalan Hang Lekir serves the most characterful dim sum in Melaka — har gao, siu mai and char siu bao steamed in bamboo. No frills, fluorescent lights, packed tables. Perfection.</div>
+          <div class="timeline-title">Low Yong Mow: Legendary Dim Sum 🥢</div>
+          <div class="timeline-desc">Since 1948. This legendary kopitiam on Jalan Hang Lekir serves the most characterful dim sum in Melaka: har gao, siu mai and char siu bao steamed in bamboo. No frills, fluorescent lights, packed tables. Perfection.</div>
           <span class="timeline-tag tag-food">Dim Sum Lunch</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">2:00 pm</div>
           <div class="timeline-title">A Famosa & Porta de Santiago</div>
-          <div class="timeline-desc">The 1511 Portuguese fortress gate, survivor of centuries of invasion and near-demolition by the British. A profound landmark — pause at the gate and try to imagine the fleet that once anchored below.</div>
+          <div class="timeline-desc">The 1511 Portuguese fortress gate, survivor of centuries of invasion and near-demolition by the British. A profound landmark. Pause at the gate and try to imagine the fleet that once anchored below.</div>
           <span class="timeline-tag tag-landmark">History</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">3:00 pm</div>
-          <div class="timeline-title">Anteroom Cafe ☕</div>
-          <div class="timeline-desc">A cool, art-forward cafe in a restored colonial building near Jalan Laksamana. Exposed concrete, trailing plants, and a serious espresso menu. The iced Kopi Cendol latte — espresso over cendol jelly and condensed milk — is a Melaka original you won't find elsewhere.</div>
-          <span class="timeline-tag tag-cafe">Cool Cafe</span>
+          <div class="timeline-title">Menara Taming Sari: 360° Views</div>
+          <div class="timeline-desc">Board the revolving gyrotower that lifts you 80 metres for a full panorama of Melaka: the river, the minarets, the red-roofed Dutch quarter, and the Straits beyond. Right on the waterfront, a short walk from A Famosa.</div>
+          <span class="timeline-tag tag-activity">Views</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">4:00 pm</div>
-          <div class="timeline-title">Menara Taming Sari — 360° Views</div>
-          <div class="timeline-desc">Board the revolving gyrotower that lifts you 80 metres for a full panorama of Melaka — the river, the minarets, the red-roofed Dutch quarter, and the Straits beyond.</div>
-          <span class="timeline-tag tag-activity">Views</span>
+          <div class="timeline-title">Anteroom Cafe ☕</div>
+          <div class="timeline-desc">A cool, art-forward cafe in a restored colonial building near Jalan Laksamana. Exposed concrete, trailing plants, and a serious espresso menu. The iced Kopi Cendol latte (espresso over cendol jelly and condensed milk) is a Melaka original you won't find elsewhere.</div>
+          <span class="timeline-tag tag-cafe">Cool Cafe</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
@@ -1263,8 +1365,8 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">7:00 pm</div>
-          <div class="timeline-title">Nancy's Kitchen — Peranakan Fine Dining 🍽️</div>
-          <div class="timeline-desc">Melaka's most celebrated Nyonya restaurant. Order Ayam Pongteh (chicken braised in fermented soybean and palm sugar), Otak-Otak grilled in banana leaf, and the extraordinary Babi Ponteh pork belly. Recipes passed through generations — book ahead.</div>
+          <div class="timeline-title">Nancy's Kitchen: Peranakan Fine Dining 🍽️</div>
+          <div class="timeline-desc">Melaka's most celebrated Nyonya restaurant. Order Ayam Pongteh (chicken braised in fermented soybean and palm sugar), Otak-Otak grilled in banana leaf, and the extraordinary Babi Ponteh pork belly. Recipes passed through generations. Book ahead.</div>
           <span class="timeline-tag tag-food">Peranakan Dinner</span>
           <div class="timeline-photo">
             <img src="https://therantingpanda.com/wp-content/uploads/2019/02/1-img_5041.jpg" alt="Nancy's Kitchen Peranakan food" loading="lazy" onerror="this.src='https://therantingpanda.com/wp-content/uploads/2019/02/1-img_5039.jpg'">
@@ -1302,7 +1404,7 @@
         <div style="font-size:0.82rem;color:var(--ink);">🥟 <strong>Popiah</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Fresh jicama spring rolls</span></div>
         <div style="font-size:0.82rem;color:var(--ink);">🥣 <strong>Tau Fu Fa</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Silken tofu + gula melaka</span></div>
         <div style="font-size:0.82rem;color:var(--ink);">🍢 <strong>Dim Sum</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Low Yong Mow, since 1948</span></div>
-        <div style="font-size:0.82rem;color:var(--ink);">🍧 <strong>Cendol</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Jonker 88 — iconic bowl</span></div>
+        <div style="font-size:0.82rem;color:var(--ink);">🍧 <strong>Cendol</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Jonker 88, iconic bowl</span></div>
         <div style="font-size:0.82rem;color:var(--ink);">🍡 <strong>Otak-Otak</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Grilled fish in banana leaf</span></div>
         <div style="font-size:0.82rem;color:var(--ink);">🍨 <strong>ABC Shaved Ice</strong><br><span style="color:rgba(44,26,14,0.55);font-size:0.75rem;">Loaded with beans & jelly</span></div>
       </div>
@@ -1343,7 +1445,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">8:00 am</div>
           <div class="timeline-title">Klebang Original Coconut Shake 🥥</div>
-          <div class="timeline-desc">A rite of passage. At the original Klebang stall facing the Straits, young coconuts are split open and blended into a frothy, ice-cold shake — pulp, flesh, husk and all. Pairs with a roti canai from the mamak next door. Nothing better on a 32°C morning.</div>
+          <div class="timeline-desc">A rite of passage. Take a Grab (~15 min from the heritage zone) to the original Klebang stall facing the Straits, where young coconuts are split open and blended into a frothy, ice-cold shake, pulp, flesh, husk and all. Pairs with a roti canai from the mamak next door. Nothing better on a 32°C morning.</div>
           <span class="timeline-tag tag-street">Iconic Drink</span>
           <div class="timeline-photo">
             <img src="https://growingupwithjer.wordpress.com/wp-content/uploads/2019/07/img_7989.jpg?w=800" alt="Klebang Coconut Shake" loading="lazy" onerror="this.src='https://foodeverywhere.wordpress.com/wp-content/uploads/2014/04/coconut-shake-klebang.jpg?w=700'">
@@ -1365,13 +1467,13 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">10:30 am</div>
           <div class="timeline-title">Melaka Sultanate Palace Museum</div>
-          <div class="timeline-desc">A stunning nail-free wooden replica of the 15th-century Malay palace. Houses treasures from the golden age of the Melaka Sultanate — including royal regalia and ancient maps of the maritime trading routes.</div>
+          <div class="timeline-desc">A stunning nail-free wooden replica of the 15th-century Malay palace. Houses treasures from the golden age of the Melaka Sultanate, including royal regalia and ancient maps of the maritime trading routes.</div>
           <span class="timeline-tag tag-culture">Museum</span>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">11:30 am</div>
-          <div class="timeline-title">Maritime Museum — Flora de la Mar</div>
+          <div class="timeline-title">Maritime Museum: Flora de la Mar</div>
           <div class="timeline-desc">Housed inside a full-scale replica of the Portuguese galleon that sank with Melaka's treasury in 1511. Three atmospheric decks of seafaring history, maps and colonial-era artefacts.</div>
           <span class="timeline-tag tag-culture">Museum</span>
         </div>
@@ -1389,7 +1491,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">1:00 pm</div>
-          <div class="timeline-title">Ole Sayang — Farewell Peranakan Feast 🍽️</div>
+          <div class="timeline-title">Ole Sayang: Farewell Peranakan Feast 🍽️</div>
           <div class="timeline-desc">A final, lingering Nyonya lunch: Ayam Pongteh (chicken in fermented soy and coconut palm sugar), Inchi Kabin crispy fried chicken with lime rind, and Chap Chai braised vegetables. One of Melaka's most beloved family restaurants for 30+ years.</div>
           <span class="timeline-tag tag-food">Farewell Lunch</span>
         </div>
@@ -1397,7 +1499,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-time">2:30 pm</div>
           <div class="timeline-title">Baba Charlie Nyonya Cake 🎂</div>
-          <div class="timeline-desc">The most famous Nyonya cake shop in Melaka on Jalan Hang Jebat. Pack boxes of Onde-onde, Kueh Lapis layered rice cake, Ang Ku Kueh (red tortoise cake) and Kueh Dadar pandan crepes — traditional recipes made fresh every morning. The best edible souvenirs in the city.</div>
+          <div class="timeline-desc">The most famous Nyonya cake shop in Melaka on Jalan Hang Jebat. Pack boxes of Onde-onde, Kueh Lapis layered rice cake, Ang Ku Kueh (red tortoise cake) and Kueh Dadar pandan crepes, all made fresh every morning. The best edible souvenirs in the city.</div>
           <span class="timeline-tag tag-street">Nyonya Kueh</span>
         </div>
         <div class="timeline-item">
@@ -1410,8 +1512,8 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">4:30 pm</div>
-          <div class="timeline-title">Departure — Until Next Time</div>
-          <div class="timeline-desc">Head back to KL with a box of kueh, a bag of dodol, and the particular warmth that Melaka leaves behind. The city has a way of pulling people back — and it will.</div>
+          <div class="timeline-title">Departure: Until Next Time</div>
+          <div class="timeline-desc">Head back to KL with a box of kueh, a bag of dodol, and the particular warmth that Melaka leaves behind. The city has a way of pulling people back, and it will.</div>
           <span class="timeline-tag tag-activity">Depart</span>
         </div>
       </div>
@@ -1421,7 +1523,7 @@
     <div class="reveal" style="margin-top:3rem; padding:2rem 2.5rem; background:var(--crimson-dark); border-left:3px solid var(--gold);">
       <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;">Take Home · Edible & Otherwise</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
-        <div style="font-size:0.82rem;color:var(--ivory-dark);">🍰 <strong>Nyonya Kueh</strong><br><span style="color:rgba(245,230,188,0.45);font-size:0.75rem;">Baba Charlie — fresh daily</span></div>
+        <div style="font-size:0.82rem;color:var(--ivory-dark);">🍰 <strong>Nyonya Kueh</strong><br><span style="color:rgba(245,230,188,0.45);font-size:0.75rem;">Baba Charlie, fresh daily</span></div>
         <div style="font-size:0.82rem;color:var(--ivory-dark);">🍬 <strong>Dodol</strong><br><span style="color:rgba(245,230,188,0.45);font-size:0.75rem;">Coconut palm sugar toffee</span></div>
         <div style="font-size:0.82rem;color:var(--ivory-dark);">🍋 <strong>Asam Boi Candy</strong><br><span style="color:rgba(245,230,188,0.45);font-size:0.75rem;">Salted plum + tamarind</span></div>
         <div style="font-size:0.82rem;color:var(--ivory-dark);">🎨 <strong>Hand-printed Batik</strong><br><span style="color:rgba(245,230,188,0.45);font-size:0.75rem;">Jonker Street artisan shops</span></div>
@@ -1431,6 +1533,138 @@
     </div>
   </div>
 </section>
+
+<!-- ===== OTHER PLACES TO VISIT ===== -->
+<div class="day-sep"></div>
+<section id="more">
+  <div class="day-section">
+    <div class="section-header reveal" style="padding-top:5rem;">
+      <div class="section-eyebrow">Beyond the Itinerary</div>
+      <h2 class="section-title">Other Places to <em>Discover</em></h2>
+      <p style="margin-top:1rem; font-size:0.85rem; color:rgba(44,26,14,0.55); max-width:520px; margin-left:auto; margin-right:auto; line-height:1.7;">Melaka rewards the curious. These spots didn't make the three-day cut but are well worth your time.</p>
+      <div class="section-rule"></div>
+    </div>
+    <div class="reveal" style="overflow-x:auto; margin-top:0.5rem; padding-bottom:3rem;">
+      <table class="places-table">
+        <thead>
+          <tr>
+            <th>Place</th>
+            <th>Category</th>
+            <th>Where</th>
+            <th>Why Go</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="place-name">Baboon House</span><span class="place-cat cat-cafe">Hip Cafe</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Cafe &amp; Gallery</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Jalan Tun Tan Cheng Lock</td>
+            <td style="font-size:0.82rem;">Bohemian shophouse cafe by local artist Charles Cham. Eclectic decor, smoothies, and walls covered in quirky local art prints.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">Orangutan House</span><span class="place-cat cat-art">Art &amp; Shop</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Gallery &amp; Boutique</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Jalan Tun Tan Cheng Lock</td>
+            <td style="font-size:0.82rem;">Charles Cham's brilliantly painted shophouse. Unique local prints, postcards and art you won't find anywhere else in Malaysia.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">Selvam Restaurant</span><span class="place-cat cat-food">South Indian</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Restaurant</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Taman Melaka Raya</td>
+            <td style="font-size:0.82rem;">Melaka's most beloved banana leaf rice. The array of curries, papadum and sides is staggering. Arrive before 12:30pm or face a long wait.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">Pak Putra Tandoori</span><span class="place-cat cat-food">North Indian</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Restaurant</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Jalan Puteri Hang Li Po</td>
+            <td style="font-size:0.82rem;">Open-air courtyard tandoori institution. The naan is charred perfection straight from the clay oven, and the tikka is rich and smoky.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">The Shore Sky Tower</span><span class="place-cat cat-views">Views &amp; Bar</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Observation Deck</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Jalan Persisiran Bunga Raya</td>
+            <td style="font-size:0.82rem;">168 metres up with a sky bridge and deck above the Straits of Melaka. Best at sunset. There is also a bar for drinks with a view.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">Umbai Seafood Village</span><span class="place-cat cat-seafood">Seafood</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Open-air Seafood</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Kampung Umbai (20 min drive)</td>
+            <td style="font-size:0.82rem;">Legendary open-air seafood restaurants on stilts over the water. Order kari kepah, grilled stingray and salted egg crab. Go for lunch.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">Pampas Sky Dining</span><span class="place-cat cat-food">Rooftop Restaurant</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Restaurant &amp; Bar</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">The Shore, Jalan Persisiran</td>
+            <td style="font-size:0.82rem;">Melaka's most dramatic dining room perched above the city. Western and Asian mains with a panoramic view of the Straits at every table.</td>
+          </tr>
+          <tr>
+            <td><span class="place-name">The Majestic Malacca</span><span class="place-cat cat-bar">Hotel Bar</span></td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Colonial Bar &amp; Lounge</td>
+            <td style="color:rgba(44,26,14,0.55);font-size:0.78rem;">Jalan Bunga Raya</td>
+            <td style="font-size:0.82rem;">Step into this restored colonial hotel for a sundowner gin and tonic. The lounge drips in heritage grandeur. Non-guests very welcome.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THINGS TO BRING ===== -->
+<div class="day-sep"></div>
+<section id="packing">
+  <div style="padding:6rem 5vw;">
+    <div style="max-width:1000px;margin:0 auto;">
+      <div class="section-header reveal" style="padding-top:0;">
+        <div class="section-eyebrow">Before You Pack</div>
+        <h2 class="section-title">Things to <em>Bring</em></h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="pack-grid reveal">
+        <div class="pack-category">
+          <div class="pack-category-title">☀️ &nbsp;Clothing</div>
+          <ul class="pack-list">
+            <li>Lightweight, breathable fabrics (31°C+ and very humid)</li>
+            <li>Comfortable walking shoes for uneven heritage streets</li>
+            <li>Light cardigan or layer for air-conditioned cafes</li>
+            <li>Sunglasses and a brimmed hat or cap</li>
+            <li>A fresh change of clothes for the evening</li>
+          </ul>
+        </div>
+        <div class="pack-category">
+          <div class="pack-category-title">🌂 &nbsp;Skin &amp; Health</div>
+          <ul class="pack-list">
+            <li>Sunscreen SPF 50+ (reapply every two hours)</li>
+            <li>Foldable travel umbrella (afternoon showers are quick but heavy)</li>
+            <li>Insect repellent for outdoor hawker areas</li>
+            <li>Antacids or Eno (for ambitious eating days)</li>
+            <li>Small personal first-aid kit</li>
+          </ul>
+        </div>
+        <div class="pack-category">
+          <div class="pack-category-title">💰 &nbsp;Practical</div>
+          <ul class="pack-list">
+            <li>Cash in Malaysian Ringgit (many stalls are cash-only)</li>
+            <li>Reusable tote bag for kueh, dodol and souvenir shopping</li>
+            <li>A charged power bank</li>
+            <li>Grab app set up and ready to use</li>
+            <li>Google Maps downloaded offline for the heritage zone</li>
+          </ul>
+        </div>
+        <div class="pack-category">
+          <div class="pack-category-title">📷 &nbsp;Photos &amp; Extras</div>
+          <ul class="pack-list">
+            <li>Camera or phone with storage cleared</li>
+            <li>Portable charger or extra battery pack</li>
+            <li>Water bottle (stay hydrated in the heat)</li>
+            <li>A genuine sense of curiosity</li>
+            <li>An empty stomach at all times</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="day-sep"></div>
 
 <!-- Practical Info -->
 <section class="practical" id="practical">
@@ -1473,7 +1707,7 @@
       <span class="practical-card-icon">🌙</span>
       <div class="practical-card-label">Best Time</div>
       <div class="practical-card-value">Weekends for Night Market</div>
-      <div class="practical-card-note">Jonker Walk Night Market runs Friday–Sunday evenings. Avoid sightseeing between 12–3pm on hot days. April 2–4 lands on Thu–Sat — perfect timing.</div>
+      <div class="practical-card-note">Jonker Walk Night Market runs Friday–Sunday evenings. Avoid sightseeing between 12–3pm on hot days. April 2–4 lands on Thu–Sat, perfect timing.</div>
     </div>
   </div>
 </section>
